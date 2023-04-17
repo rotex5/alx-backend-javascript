@@ -1,7 +1,7 @@
-export default function createIteratorObject(report) {
-  const newArr = [];
-  for (const value of Object.values(report.allEmployees)) {
-    newArr.push(...value);
-  }
-  return newArr;
+function createIteratorObject(report) {
+  const employees = Object.values(report.allEmployees).flatMap((employee) => employee);
+  // console.log(employees);
+  return employees;
 }
+
+export default createIteratorObject;
