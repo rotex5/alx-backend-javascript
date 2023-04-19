@@ -10,7 +10,7 @@ function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled(promises)
     .then((res) => res.map((res) => ({
       status: res.status,
-      value: res.status === 'fulfilled' ? res.value : res.reason,
+      value: res.status === 'fulfilled' ? res.value : `${res.reason}`,
     })));
 }
 
