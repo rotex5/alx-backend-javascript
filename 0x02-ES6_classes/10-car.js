@@ -1,4 +1,4 @@
-const CLONE = Symbol('clone');
+// const CLONE = Symbol('clone');
 
 class Car {
   constructor(brand, motor, color) {
@@ -14,6 +14,7 @@ class Car {
   }
   */
   // Implemention with Symbol
+  /*
   [CLONE]() {
     const newCar = new Car(this._brand, this._motor, this._color);
     Object.setPrototypeOf(newCar, Object.getPrototypeOf(this));
@@ -22,6 +23,16 @@ class Car {
 
   cloneCar() {
     return this[CLONE]();
+  }
+  */
+  // Using Symbol.species
+  static get [Symbol.species]() {
+    return this;
+  }
+
+  cloneCar() {
+    const Species = this.constructor[Symbol.species];
+    return new Species();
   }
 }
 
