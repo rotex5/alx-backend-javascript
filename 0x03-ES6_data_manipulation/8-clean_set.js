@@ -1,5 +1,5 @@
 function cleanSet(set, startString) {
-  // if (startString === '') return '';
+  if (startString === '' || startString === undefined) return '';
 
   const newArray = new Array(...set);
   const result = newArray
