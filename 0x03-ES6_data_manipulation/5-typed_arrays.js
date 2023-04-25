@@ -10,7 +10,7 @@ function createInt8TypedArray(length, position, value) {
   // int8Array[position] = value;
 
   // second method
-  const dv1 = new DataView(buffer, 0);
+  const dv1 = new DataView(buffer);
 
   dv1.setInt8(position, value);
 
