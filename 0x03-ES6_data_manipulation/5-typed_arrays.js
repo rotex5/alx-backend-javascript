@@ -5,14 +5,14 @@ function createInt8TypedArray(length, position, value) {
   const buffer = new ArrayBuffer(length);
 
   // setting Int8Array view on buffer
-  // const int8Array = new Int8Array(buffer);
+  const int8Array = new Int8Array(buffer);
 
-  // int8Array[position] = value;
+  int8Array[position] = value;
 
   // second method
-  const dv1 = new DataView(buffer);
+  // const dv1 = new DataView(buffer);
 
-  dv1.setInt8(position, value);
+  // dv1.setInt8(position, value);
 
   return buffer;
 }
