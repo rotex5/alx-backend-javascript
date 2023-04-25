@@ -10,6 +10,7 @@ function hasValuesFromArray(setParams, arrayParams) {
   return true;
   */
   // issue with i++
+  // array.every() can also be used
 
   for (const elem of arrayParams) {
     if (!setParams.has(elem)) return false;
