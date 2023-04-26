@@ -3,7 +3,9 @@ export const weakMap = new WeakMap();
 export function queryAPI(endpoint) {
   let count = 0;
 
-  count = weakMap.get(endpoint) || 0;
+  if (weakMap.get(endpoint)) {
+    count = weakMap.get(endpoint);
+  }
   /*
    * We then use the get method of the WeakMap to retrieve
    * the current count for this endpoint. If the count does
