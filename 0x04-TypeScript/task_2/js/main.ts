@@ -38,3 +38,13 @@ console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
 */
+
+const isDirector = (employee: Director | Teacher): boolean => employee instanceof Director;
+
+function executeWork(employee: Director | Teacher): void {
+  const output = employee instanceof Director? employee.workDirectorTasks() : employee.workTeacherTasks();
+  console.log(output);
+}
+
+executeWork(createEmployee(200));
+executeWork(createEmployee(1000));
